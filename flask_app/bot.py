@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import wikipediaapi
 import re
 import json
+import os  # Import the os module
 
 app = Flask(__name__)
 
@@ -70,4 +71,5 @@ def chat():
     return jsonify({"chatbotResponse": response})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))  # Use the port from environment or default to 5000
+    app.run(host='0.0.0.0', port=port, debug=True)
