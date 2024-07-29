@@ -1,4 +1,4 @@
-flask
-requests
-beautifulsoup4
-wikipedia-api
+Flask==2.2.3
+requests==2.31.0
+beautifulsoup4==4.12.3
+wikipedia-api==0.6.0
