@@ -3,9 +3,8 @@ import requests
 from bs4 import BeautifulSoup
 import wikipediaapi
 import re
-import os  
-from werkzeug.urls import unquote
-# Import the os module
+import os
+from urllib.parse import unquote  # Use urllib.parse instead of Werkzeug
 
 app = Flask(__name__)
 
