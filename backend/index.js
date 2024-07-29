@@ -24,7 +24,7 @@ app.post('/chat', (req, res) => {
     console.log(`Received message from user: ${userMessage}`);
 
     // Correctly specify the absolute path to the Python script
-    const scriptPath = path.resolve('bot.py'); // Ensure this path is correct
+    const scriptPath = path.resolve(__dirname, 'bot.py'); // Ensure this path is correct
 
     // Call the Python script
     const pythonProcess = spawn('python', [scriptPath, userMessage]);
