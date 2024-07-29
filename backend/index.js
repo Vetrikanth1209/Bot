@@ -8,7 +8,7 @@ require("dotenv").config();
 
 // Middleware
 const corsOptions = {
-    origin: "http://localhost:3000" // frontend URI (ReactJS)
+    origin: "https://bot-frontend-n4x1.onrender.com" // frontend URI (ReactJS)
 };
 app.use(express.json());
 app.use(cors(corsOptions));
