@@ -20,7 +20,7 @@ app.post('/chat', async (req, res) => {
 
     try {
         // Make sure the URL matches where Flask is running
-        const response = await axios.post('http://127.0.0.1:5000/chat', { query: userMessage });
+        const response = await axios.post('https://flask-app-pf9d.onrender.com/chat', { query: userMessage });
         res.json(response.data);
     } catch (error) {
         console.error('Error calling Flask API:', error);

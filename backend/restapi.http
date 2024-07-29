@@ -1,5 +1,5 @@
 ####
-POST http://localhost:1234/chat
+POST https://flask-app-pf9d.onrender.com/chat
 Content-Type: application/json
 
 {
