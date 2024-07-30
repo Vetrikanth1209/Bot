@@ -2,7 +2,7 @@ import { Button, TextField, Card, CardContent } from '@mui/material';
 import { useState } from 'react';
 import { callpublish } from './axios'; // Assuming callpublish is a function you've defined to make API calls
 import { Menu } from './menu';
-import './style.css'
+import './menu.css';
 
 export const Bot = () => {
   const [datas, setDatas] = useState({
@@ -32,10 +32,18 @@ export const Bot = () => {
 
   return (
     <>
-    <Menu />
-      <Card className="results" style={{borderRadius:'50px',boxShadow:'2px 2px 30px gray'}}> {/* Use className instead of class */}
-        <CardContent>{postData && JSON.stringify(postData)}</CardContent> {/* Check if postData is not null */}
-      </Card>
+      <Menu />
+
+      {/* Conditionally render the Card only if postData is not null */}
+      {postData && (
+        <Card
+          className="results"
+          style={{ borderRadius: '50px', boxShadow: '2px 2px 30px gray',backgroundColor:'wheat' }}
+        >
+          <CardContent>{JSON.stringify(postData)}</CardContent>
+        </Card>
+      )}
+
       <div
         style={{
           backgroundColor: 'white',

@@ -1,109 +1,137 @@
-*,*:before,*:after {
-	box-sizing: border-box;
-	margin-top: 0px;
+/* Reset and global styles */
+/* Reset and global styles */
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 :after {
-	content: "";
+    content: "";
 }
 
+/* Top navigation bar styles */
+.top-nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 80px; /* Adjust height as needed */
+    background-color: crimson;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    box-shadow: 5px 1px 30px black;
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+/* Add margin to content to account for the sticky top-nav */
+.content {
+    margin-top: 80px; /* Same as the height of .top-nav */
+}
+
+/* Main section styles */
 section {
-  position: relative;
-  left: 100px;
-
+    margin-top: 0;
 }
 
+/* Body and other styles */
 body {
-  padding: 10px 0;
-  background: lightblue;
-  color: white;
-  max-width:640px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  line-height:1.4;
+    padding: 10px 0;
+    background: lightblue;
+    color: white;
+    max-width: 640px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 nav {
     float: left;
-	position: fixed;
-	top: 0;
+    position: fixed;
+    top: 80px; /* Adjusted for top navigation */
     left: 0;
-	background: transparent;
-	margin-top: 50px;
+    background: transparent;
+    margin-top: 30px; /* Original value was 120px */
 }
 
-nav ul {
+/* Rest of the CSS remains unchanged */
+
+  
+  nav ul {
 	text-align: center;
-}
-
-nav ul li {
+	margin-left: 20px;
+  }
+  
+  nav ul li {
 	position: relative;
-    width: 70px;
-    cursor: pointer;
+	width: 70px;
+	cursor: pointer;
 	background: crimson;
 	text-transform: uppercase;
-	transition:all .4s ease-out;
+	transition: all 0.4s ease-out;
 	height: 20vh;
-}
-
-nav ul li:after {
+  }
+  
+  nav ul li:after {
 	position: absolute;
 	background: white;
 	color: crimson;
-	top:0;
+	top: 0;
 	left: 70px;
-	width: 70px; height: 100%;
-  opacity:.5;
-  transform: perspective(400px) rotateY(90deg);
+	width: 70px;
+	height: 100%;
+	opacity: 0.5;
+	transform: perspective(400px) rotateY(90deg);
 	transform-origin: 0 100%;
-	transition:all .4s ease-out;
-}
-
-nav ul li:nth-child(1):after { 
+	transition: all 0.4s ease-out;
+  }
+  
+  nav ul li:nth-child(1):after { 
 	content: "Home";
 	line-height: 88px;
-}
-nav ul li:nth-child(2):after { 
-	content: "About";
+  }
+  nav ul li:nth-child(2):after { 
+	content: "Bot";
 	line-height: 88px;
-}
-nav ul li:nth-child(3):after { 
-	content: "Work";
+  }
+  nav ul li:nth-child(3):after { 
+	content: "About";
 	line-height: 85px;
-}
-nav ul li:nth-child(4):after { 
-	content: "Say hi";
+  }
+  nav ul li:nth-child(4):after { 
+	content: "Log Out";
 	line-height: 70px;
-}
-
-nav ul li:hover {
+  }
+  
+  nav ul li:hover {
 	transform: translateX(-70px);
-}
-
-nav ul li:hover:after {
-  opacity: 1;
-	transform: perspective(400px) rotateY(0deg) scale(1) ;
-}
-
-
-nav ul li > div {
+  }
+  
+  nav ul li:hover:after {
+	opacity: 1;
+	transform: perspective(400px) rotateY(0deg) scale(1);
+  }
+  
+  nav ul li > div {
 	display: inline-block;
 	padding: 25px 0;
 	background: transparent;
-}
-
-nav ul li div { position: relative; }
-
-.roof {
+  }
+  
+  nav ul li div { 
+	position: relative; 
+  }
+  
+  .roof {
 	width: 0;
 	height: 0;
-	top:2px;
+	top: 2px;
 	border-style: solid;
 	border-width: 0 21px 15px 21px;
 	border-color: transparent transparent #ffffff transparent;
-}
-
-.roof-edge {
+  }
+  
+  .roof-edge {
 	position: absolute;
 	z-index: 20;
 	left: -17px;
@@ -113,9 +141,9 @@ nav ul li div { position: relative; }
 	border-style: solid;
 	border-width: 0 17px 12px 17px;
 	border-color: transparent transparent crimson transparent;
-}
-/*white triangle over red triangle*/
-.roof-edge:after {
+  }
+  /*white triangle over red triangle*/
+  .roof-edge:after {
 	position: absolute;
 	left: -14.5px;
 	top: 3px;
@@ -124,47 +152,47 @@ nav ul li div { position: relative; }
 	border-style: solid;
 	border-width: 0 14.5px 10px 14.5px;
 	border-color: transparent transparent white transparent;
-}
-
-.front {
+  }
+  
+  .front {
 	position: relative;
 	top: 3px;
 	width: 28.5px;
 	height: 20px;
 	margin: 0 auto;
 	background: white;
-}
-/*door*/
-.front:after {
+  }
+  /*door*/
+  .front:after {
 	position: absolute;
 	background: crimson;
 	width: 11px;
 	height: 13px;
 	bottom: 0;
-	left:9px;
-}
-
-/*/// About me ////*/
-
-.head {
+	left: 9px;
+  }
+  
+  /*/// About me ////*/
+  
+  .head {
 	width: 32px;
 	height: 35px;
 	background: white;
-	border-radius:8px;
-}
-/*mouth*/
-.head:after {
+	border-radius: 8px;
+  }
+  /*mouth*/
+  .head:after {
 	width: 4px;
 	height: 10px;
 	background: white;
 	position: absolute;
-	border-radius:4px 0 0 4px;
-	top:21px;
+	border-radius: 4px 0 0 4px;
+	top: 21px;
 	left: 14px;
-	transform:rotate(270deg);
-}
-
-.eyes {
+	transform: rotate(270deg);
+  }
+  
+  .eyes {
 	width: 8px;
 	height: 5px;
 	border-radius: 50%;
@@ -172,9 +200,9 @@ nav ul li div { position: relative; }
 	top: 10px;
 	left: 5px;
 	background: crimson;
-}
-/*right eye*/
-.eyes:after {
+  }
+  /*right eye*/
+  .eyes:after {
 	width: 8px;
 	height: 5px;
 	border-radius: 50%;
@@ -182,102 +210,102 @@ nav ul li div { position: relative; }
 	top: 0;
 	left: 14px;
 	background: crimson;
-}
-
-.beard {
+  }
+  
+  .beard {
 	width: 32px;
 	height: 17px;
 	background: crimson;
-	border:2px solid white;
+	border: 2px solid white;
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	border-radius:0 0 8px 8px;
-}
-/*nose*/
-.beard:after {
+	border-radius: 0 0 8px 8px;
+  }
+  /*nose*/
+  .beard:after {
 	position: absolute;
-	top:-2px;
+	top: -2px;
 	left: 11px;
 	background: white;
-	width:6px;
+	width: 6px;
 	height: 4px;
-	border-left:1px solid crimson;
-	border-right:1px solid crimson;
-}
-
-/*//work//*/
-
-.paper {
+	border-left: 1px solid crimson;
+	border-right: 1px solid crimson;
+  }
+  
+  /*//work//*/
+  
+  .paper {
 	position: relative;
-	height:32px;
+	height: 32px;
 	width: 29px;
 	background: white;
-	border:2px solid white;
-}
-
-/*window*/
-.paper:after {
+	border: 2px solid white;
+  }
+  
+  /*window*/
+  .paper:after {
 	position: absolute;
-	top:1px;
+	top: 1px;
 	left: 0;
 	width: 25px;
 	height: 29px;
 	background: white;
-	border-top:4px solid crimson;
-}
-
-.lines {
+	border-top: 4px solid crimson;
+  }
+  
+  .lines {
 	position: absolute;
 	top: 36px;
 	left: 5px;
 	width: 11px;
 	box-shadow: 0 0 0 1px crimson;
-}
-
-.lines:after {
+  }
+  
+  .lines:after {
 	position: absolute;
 	top: 4px;
 	left: 3px;
 	width: 14px;
 	box-shadow: 0 0 0 1px crimson;
-}
-
-.lines:nth-child(2) {
+  }
+  
+  .lines:nth-child(2) {
 	position: absolute;
 	top: 44px;
 	left: 8px;
 	width: 11px;
-}
-
-.lines:nth-child(2):after {
+  }
+  
+  .lines:nth-child(2):after {
 	position: absolute;
 	top: 4px;
 	left: -3px;
 	width: 11px;
-}
-
-.lines:nth-child(3) {
+  }
+  
+  .lines:nth-child(3) {
 	position: absolute;
 	top: 52px;
 	left: 8px;
 	width: 14px;
-}
-
-.lines:nth-child(3):after {
+  }
+  
+  .lines:nth-child(3):after {
 	display: none;
-}
-
-/*//mail //*/
-
-.mail-base {
+  }
+  
+  /*//mail //*/
+  
+  .mail-base {
 	position: relative;
 	width: 32px;
 	height: 18px;
 	background: white;
-}
-
-.mail-top {
+  }
+  
+  .mail-top {
 	position: absolute;
 	z-index: 20;
 	left: 0;
@@ -288,9 +316,9 @@ nav ul li div { position: relative; }
 	border-style: solid;
 	border-width: 0 16px 11px 16px;
 	border-color: transparent transparent crimson transparent;
-}
-
-.mail-top:after {
+  }
+  
+  .mail-top:after {
 	position: absolute;
 	z-index: 20;
 	left: -16px;
@@ -300,15 +328,42 @@ nav ul li div { position: relative; }
 	border-style: solid;
 	border-width: 0 16px 9px 16px;
 	border-color: transparent transparent white transparent;
-}
+  }
+  
 
-.fixed-top-image {
-  position: fixed; /* Fix the image to the top of the page */
-  width: 500px; /* Set the width of the image */
-  height: auto;
-  margin-left: 900px;
-  margin-bottom: 100px;
-  top: 0;
-}
+  .fixed-top-image {
+	width: 500px;
+	height: auto;
+	animation: slideInRight 1s ease-out forwards; 
+	margin-right: 350px;
+	/* Apply the slide-in animation */
+  }
+  
+  @keyframes slideInRight {
+	0% {
+	  right: -100%; /* Start from off-screen */
+	}
+	100% {
+	  right: 0; /* End at the final position */
+	}
+  }
+  
 
-
+  .results {
+    width: 850px; /* Set the width of the image */
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 170px;
+    margin-top: 100px;
+    position: sticky;
+    height: fit-content;
+    margin-bottom: 150px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+   text-align: center;
+  }
+ 
+  
