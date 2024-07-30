@@ -73,14 +73,14 @@ export const Appbar = () => {
       </section>
       <div className="container" style={{marginLeft:'150px',marginTop:'-450px',width:'800px'}}>
       <div className="row mt-5">
-        <div className="col-12 text-center"style={{marginLeft:'-90px'}}>
+        <div className="col-12 text-center"style={{marginLeft:'50px',marginTop:'70px'}}>
           <h2 className="my-4 mx-2 mx-sm-0" >Make Queries in a Single Word</h2>
         </div>
       </div>
       <div className="row justify-content-center">
         <div className="col-12 col-sm-10">
-          <div className="p-3 p-sm-4 bg-white rounded shadow-sm shadow-sm-sm" style={{height:'300px',backgroundColor:'whitesmoke',textAlign:'center'}}>
-           <h1 className="about_text" style={{marginTop:'-30px'}}>
+          <div className="p-3 p-sm-4 bg-white rounded shadow-sm shadow-sm-sm" style={{height:'300px',backgroundColor:'whitesmoke',textAlign:'center',marginTop:'20px',marginLeft:'50px'}}>
+           <h1 className="about_text" style={{marginTop:'-10px'}}>
               Hello 👋🏻, I am a General Purpose Chatbot. I can answer general information about your given queries or any topics with a short answer....
             </h1>
           </div>
