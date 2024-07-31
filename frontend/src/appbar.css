@@ -434,6 +434,7 @@
 	height: auto;
 	animation: slideInRight 1s ease-out forwards; 
 	margin-left: 350px;
+	filter: drop-shadow(12px 8px 10px black);
 	/* Apply the slide-in animation */
   }
   

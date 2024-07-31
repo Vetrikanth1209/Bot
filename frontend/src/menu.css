@@ -331,22 +331,25 @@ nav {
   }
   
 
-  .fixed-top-image {
-	width: 500px;
+  .image-left {
+	width: 300px;
 	height: auto;
-	animation: slideInRight 1s ease-out forwards; 
-	margin-right: 350px;
+	animation: slideup 1s ease-out forwards; 
+	margin-right: 50px;
+	filter: drop-shadow(12px 8px 10px black);
 	/* Apply the slide-in animation */
   }
   
-  @keyframes slideInRight {
+  @keyframes slideup {
 	0% {
-	  right: -100%; /* Start from off-screen */
+	  opacity: 0;
+	  transform: translateY(100%);
 	}
 	100% {
-	  right: 0; /* End at the final position */
+	  opacity: 1;
+	  transform: translateY(0%);
 	}
-  }
+	}
   
 
   .results {

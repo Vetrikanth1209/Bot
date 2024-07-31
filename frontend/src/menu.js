@@ -1,5 +1,5 @@
 import './menu.css';
-import Bot from './bot.png';
+import WhiteBot from './white-bot.png';
 import { useNavigate } from 'react-router-dom';
 import NavIcon from './bot-icon.png'
 import Git from './Git.png'
@@ -59,8 +59,8 @@ export const Menu = () => {
           </li>
         </ul>
       </nav>
-      <div style={{marginLeft:'650px',marginTop:'0px',position:'fixed'}} className='fixed-top-image'>
-      <img src={Bot} alt="Bot" className="fixed-top-image" />
+      <div style={{marginLeft:'1100px',marginTop:'100px',position:'fixed'}} className='image-left'>
+      <img src={WhiteBot} alt="Bot" className="image-left" />
       </div>
     </>
   );
