@@ -38,9 +38,9 @@ export const Bot = () => {
       {postData && (
         <Card
           className="results"
-          style={{ borderRadius: '50px', boxShadow: '2px 2px 30px gray',backgroundColor:'wheat' }}
+          style={{ borderRadius: '50px', boxShadow: '2px 2px 30px gray',backgroundColor:'whitesmoke'}}
         >
-          <CardContent>{JSON.stringify(postData)}</CardContent>
+          <CardContent >{JSON.stringify(postData)}</CardContent>
         </Card>
       )}
 
@@ -50,7 +50,7 @@ export const Bot = () => {
           borderRadius: '20px',
           height: 'auto',
           width: '55vw',
-          marginLeft: '180px',
+          marginLeft: '280px',
           marginTop: '650px',
           padding: '10px',
           boxShadow: '5px 5px 10px crimson',

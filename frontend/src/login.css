@@ -1,0 +1,372 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+  } */
+  
+  /* Center the login container */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    margin-left: 1000px;
+  }
+  
+  /* Center the form container with responsiveness */
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .form-container input,
+  .form-container button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-container button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .form-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Snowflakes animation */
+  .snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .snowflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial;
+    text-shadow: 0 0 1px #000;
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    user-select: none;
+    cursor: default;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+  }
+  
+  .snowflake:nth-of-type(0) {
+    left: 1%;
+    animation-delay: 0s, 0s;
+  }
+  
+  .snowflake:nth-of-type(1) {
+    left: 10%;
+    animation-delay: 1s, 1s;
+  }
+  
+  .snowflake:nth-of-type(2) {
+    left: 20%;
+    animation-delay: 6s, 0.5s;
+  }
+  
+  .snowflake:nth-of-type(3) {
+    left: 30%;
+    animation-delay: 4s, 2s;
+  }
+  
+  .snowflake:nth-of-type(4) {
+    left: 40%;
+    animation-delay: 2s, 2s;
+  }
+  
+  .snowflake:nth-of-type(5) {
+    left: 50%;
+    animation-delay: 8s, 3s;
+  }
+  
+  .snowflake:nth-of-type(6) {
+    left: 60%;
+    animation-delay: 6s, 2s;
+  }
+  
+  .snowflake:nth-of-type(7) {
+    left: 70%;
+    animation-delay: 2.5s, 1s;
+  }
+  
+  .snowflake:nth-of-type(8) {
+    left: 80%;
+    animation-delay: 1s, 0s;
+  }
+  
+  .snowflake:nth-of-type(9) {
+    left: 90%;
+    animation-delay: 3s, 1.5s;
+  }
+  
+  @keyframes snowflakes-fall {
+    0% {
+      top: -10%;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+  
+  @keyframes snowflakes-shake {
+    0% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(80px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+  
+  /* Demo Purpose Only */
+  .demo {
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+    padding: 15px 0;
+    text-align: center;
+  }
+  
+  .demo a {
+    font-family: 'Raleway', sans-serif;
+    color: #000;
+  }
+
+  .image-down {
+    filter: drop-shadow(12px 8px 10px black);
+    margin-left: -300px;
+  }
+
+
+  @keyframes slidedown {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    }
+
+    .image-down {
+      animation: slidedown 0.6s ease-out forwards;
+      }
+
+      @keyframes slideup {
+        0% {
+          opacity: 0;
+          transform: translateY(100%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        }
+
+        .image-up {
+          animation: slideup 0.6s ease-out forwards;
+          }
+
+.fullbody {
+  background-color: crimson;
+  color: #fff;
+  font-family: monospace, serif;
+  letter-spacing: 0.05em;
+  width: 50vw;
+  margin-bottom: 30;
+  padding: 10;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 52px;
+}
+
+.form {
+  width: 300px;
+  padding: 64px 15px 24px;
+  margin: 0 auto;
+  .control {
+    margin: 0 0 24px;
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      font-family: monospace, serif;
+      letter-spacing: 0.05em;
+      font-size: 16px;
+      &:hover,
+      &:focus {
+        outline: none;
+        border: 0;
+      }
+    }
+  }
+  .btn {
+    width: 100%;
+    display: block;
+    padding: 14px 16px;
+    background: transparent;
+    outline: none;
+    border: 0;
+    color: #fff;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 16px;
+  }
+  
+}
+
+.block-cube {
+  position: relative;
+  .bg-top {
+    position: absolute;
+    height: 10px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(52,9,121,1) 37%, rgba(0,212,255,1) 94%);
+    bottom: 100%;
+    left: 5px;
+    right: -5px;
+    transform: skew(-45deg, 0);
+    margin: 0;
+    .bg-inner{
+      bottom: 0;
+    }
+  }
+  .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, crimson 0%, crimson 37%, crimson 94%);
+  }
+  .bg-right {
+    position: absolute;
+    background: rgb(2,0,36);
+    background: crimson;
+    top: -5px;
+    z-index: 0;
+    bottom: 5px;
+    width: 10px;
+    left: 100%;
+    transform: skew(0, -45deg);
+    .bg-inner {
+      left: 0;
+    }
+  }
+  .bg {
+    .bg-inner {
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  .bg-inner {
+    background: #212121;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+  }
+  .text {
+    position: relative;
+    z-index: 2;
+  }  
+  &.block-input {
+    input {
+      position: relative;
+      z-index: 2;
+      &:focus ~ .bg-right .bg-inner,
+      &:focus ~ .bg-top .bg-inner,
+      &:focus ~ .bg-inner .bg-inner {
+        top: 100%;
+        background: rgba(255, 255, 255, 0.5)
+      }    
+    }
+    .bg-top,
+    .bg-right,
+    .bg {
+      background: rgba(255, 255, 255, 0.5);
+      transition: rgba(255, 255, 255, 0.8) 0.2s ease-in-out;
+    }
+    .bg-right,
+    .bg-top {
+      .bg-inner {
+        transition: all 0.2s ease-in-out;
+      }
+    }
+    &:focus,
+    &:hover {
+        .bg-top,
+        .bg-right,
+        .bg {
+          background: rgba(255, 255, 255, 0.8);
+          }
+    }
+  }
+ 
+  &.block-cube-hover:focus,
+  &.block-cube-hover:hover {
+    .bg {
+      .bg-inner {
+        top: 100%;
+      }
+    }
+  }
+}
+
+.credits {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 15px 15px;
+    width: 100%;
+    z-index: 111;
+
+    a {
+        opacity: 0.6;
+        color: #fff;
+        font-size: 11px;
+        text-decoration: none;
+        &:hover {
+          opacity: 1;
+      }
+    }
+}
+  

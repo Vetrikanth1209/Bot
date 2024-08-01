@@ -8,6 +8,10 @@ import Medium from './Medium.png'
 
 export const Menu = () => {
   const nav = useNavigate()
+  const handleLogOut = () => {
+    sessionStorage.removeItem('logged');
+    window.location.assign("/");
+};
   return (
     <>
     <div className="top-nav">
@@ -43,7 +47,7 @@ export const Menu = () => {
             </div>
           </li>
           <li>
-            <div className="work-icon">
+            <div className="work-icon" onClick={() => nav('/about')}>
               <div className="paper"></div>
               <div className="lines"></div>
               <div className="lines"></div>
@@ -51,7 +55,7 @@ export const Menu = () => {
             </div>
           </li>
           <li>
-            <div className="mail-icon">
+            <div className="mail-icon" onClick={handleLogOut}>
               <div className="mail-base">
                 <div className="mail-top"></div>
               </div>
@@ -59,7 +63,7 @@ export const Menu = () => {
           </li>
         </ul>
       </nav>
-      <div style={{marginLeft:'1100px',marginTop:'100px',position:'fixed'}} className='image-left'>
+      <div style={{marginLeft:'1250px',marginTop:'100px',position:'fixed'}} className='image-left'>
       <img src={WhiteBot} alt="Bot" className="image-left" />
       </div>
     </>

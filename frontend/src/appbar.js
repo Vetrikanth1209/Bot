@@ -5,24 +5,28 @@ import NavIcon from './bot-icon.png'
 import Git from './Git.png'
 import Linkedin from './Linkedin.png'
 import Medium from './Medium.png'
+import { Button} from '@mui/material';
 
 export const Appbar = () => {
   const nav = useNavigate();
+  const handleLogOut = () => {
+    sessionStorage.removeItem('logged');
+    window.location.assign("/");
+};
 
   return (
     <>
-      {/* Top Navigation Bar */}
       <div className="top-nav">
         <ul className="top-nav-list">
         <img src={NavIcon} alt="Bot" rel='icon'style={{width:'50px'}} />
-        <div style={{display:'flex',alignItems:'center',marginLeft:'1150px'}}>
-        <img src={Git} alt="Bot" rel='icon'style={{width:'40px'}} />
+        <div style={{display:'flex',alignItems:'center',marginLeft:'1150px'}} >
+        <a href='https://github.com/Vetrikanth1209'><img src={Git} alt="Bot" rel='icon'style={{width:'40px'}} /></a>
         </div>
         <div style={{display:'flex',alignItems:'center',marginLeft:'-150px'}}>
-        <img src={Linkedin} alt="Bot" rel='icon'style={{width:'50px'}} />
+        <a href='https://www.linkedin.com/in/vetri-kanth-9ba868249/'><img src={Linkedin} alt="Bot" rel='icon'style={{width:'50px'}} /></a>
         </div>
         <div style={{display:'flex',alignItems:'center',marginLeft:'-150px'}}>
-        <img src={Medium} alt="Bot" rel='icon'style={{width:'60px'}} />
+        <a href='https://medium.com/@vetree1209mec'><img src={Medium} alt="Bot" rel='icon'style={{width:'60px'}} /></a>
         </div>
         </ul>
       </div>
@@ -47,7 +51,7 @@ export const Appbar = () => {
             </div>
           </li>
           <li>
-            <div className="work-icon">
+            <div className="work-icon" onClick={() => nav('/about')}>
               <div className="paper"></div>
               <div className="lines"></div>
               <div className="lines"></div>
@@ -55,7 +59,7 @@ export const Appbar = () => {
             </div>
           </li>
           <li>
-            <div className="mail-icon">
+            <div className="mail-icon"onClick={handleLogOut}>
               <div className="mail-base">
                 <div className="mail-top"></div>
               </div>
@@ -66,22 +70,23 @@ export const Appbar = () => {
       <section>
         <div style={{display:'flex'}}  >
           <div className="header-container">
-          <h1>GEN BOT CONVO</h1>
+          <h1>WIKI BOT</h1>
         </div>
-        <img src={Bot} alt="Bot" className="fixed-top-image" />
+        <img src={Bot} alt="Bot" className="top-image" />
         </div>
       </section>
       <div className="container" style={{marginLeft:'150px',marginTop:'-450px',width:'800px'}}>
       <div className="row mt-5">
-        <div className="col-12 text-center"style={{marginLeft:'50px',marginTop:'70px'}}>
+        <div className="col-12 text-center"style={{marginLeft:'150px',marginTop:'0px',marginBottom:'70px'}}>
           <h2 className="my-4 mx-2 mx-sm-0" >Make Queries in a Single Word</h2>
         </div>
       </div>
       <div className="row justify-content-center">
         <div className="col-12 col-sm-10">
-          <div className="p-3 p-sm-4 bg-white rounded shadow-sm shadow-sm-sm" style={{height:'300px',backgroundColor:'whitesmoke',textAlign:'center',marginTop:'20px',marginLeft:'50px'}}>
-           <h1 className="about_text" style={{marginTop:'-10px'}}>
-              Hello 👋🏻, I am a General Purpose Chatbot. I can answer general information about your given queries or any topics with a short answer....
+          <div style={{height:'300px',backgroundColor:'whitesmoke',textAlign:'center',marginTop:'-20px',marginLeft:'20px',boxShadow:'2px 2px 30px black',borderRadius:'30px',width:'900px'}}>
+           <h1 className="about_text" style={{marginTop:'-30px'}}>
+              Hello 👋🏻, I am a General Purpose Chatbot. I can answer general information about your given queries or any topics with a short answer.... USE keyword "search" 
+              <Button variant='standard' style={{backgroundColor:'crimson',color:'white',marginLeft:'30px',marginTop:'10px'}}onClick={()=>nav('/bot')}>Go To Bot</Button>
             </h1>
           </div>
         </div>

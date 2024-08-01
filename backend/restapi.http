@@ -1,5 +1,25 @@
+###
+POST  http://localhost:1234/signup
+Content-Type: application/json
+
+{
+    "username":"vetri",
+    "password":"1234"
+}
+
+###
+POST  http://localhost:1234/signin
+Content-Type: application/json
+
+{
+    "username":"vetri",
+    "password":"1234"
+}
+
+
+
 ####
-POST https://flask-app-pf9d.onrender.com/chat
+POST https://localhost:1234/chat
 Content-Type: application/json
 
 {

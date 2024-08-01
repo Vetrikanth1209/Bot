@@ -6,6 +6,9 @@ const cors = require('cors');
 const app = express();
 const mongoose = require("mongoose");
 require("dotenv").config();
+const Acc = require('./acc')
+require("./db")
+
 
 // middleware
 const corsOptions = {
@@ -15,6 +18,36 @@ app.use(express.json());
 app.use(cors(corsOptions));
 app.use(cors());
 app.use(bodyParser.json());
+
+
+app.post('/signup',async(req,res)=>{
+    const newUser = new Acc(req.body)
+    await newUser.save()
+    res.json({"message":`${newUser} has been created `})
+})
+
+
+
+app.post('/signin',async(req,res)=>{
+    try{
+      const user = req.body.username
+     const pass = req.body.password
+     const preuser = await Acc.findOne({'$and':[{"username":{'$eq':user}},{"password":{'$eq':pass}}]})
+     if(preuser){
+         const cred = {
+             "username":user,
+             "password":pass
+         }
+         res.json(cred)
+     }
+     else{
+         response.json({"message":"error"})
+     }
+    }catch(err){
+     res.status(500).json({"error":err})
+    }
+ })
+
 
 // POST endpoint to interact with the chatbot
 app.post('/chat', (req, res) => {
